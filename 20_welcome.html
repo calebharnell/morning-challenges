@@ -1,4 +1,4 @@
-<!-- 
+<!--
 
   Run this file in your browser to see what it does.
 
@@ -18,32 +18,42 @@
  -->
 <!doctype html>
 <html>
-  <head>
-    <title>Welcome</title>
 
-    <style>
+<head>
+  <title>Welcome</title>
+
+  <style>
     body {
       text-align: center;
     }
-    </style>
-  </head>
 
-  <body>
+    body input {
+      padding: 5px;
+    }
+  </style>
+</head>
 
-    <p><input type="text" placeholder="Enter your name"></p>
+<body>
 
-    <h1></h1>
+  <p><input type="text" placeholder="Enter your first name"></p>
 
-  </body>
 
-  <script>
+  <h1></h1>
+
+</body>
+
+<script>
   const name = document.querySelector('input')
   const welcomeMessage = document.querySelector('h1')
 
-  name.onkeyup = function () {
-    // hint: name.value gives you the current text in the input box
-    welcomeMessage.textContent = `Welcome, ${name.value}!`;
+  name.onkeyup = function() {
+    if (name.value !== "") {
+      // hint: name.value gives you the current text in the input box
+      welcomeMessage.textContent = `Welcome, ${name.value.toUpperCase()}!`;
+    } else {
+      welcomeMessage.style.display = 'none'
+    }
   }
-  </script>
+</script>
 
 </html>
